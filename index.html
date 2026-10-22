@@ -8,8 +8,8 @@
   <meta property="og:title" content="Navigating the Dusty Mysteries of the Universe">
   <meta property="og:description" content="IFPU Focus Week · Trieste · 1–5 March 2027">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="images/poster.png">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 24'%3E%3Crect x='-12' y='-12' width='24' height='24' rx='5' fill='%23141438'/%3E%3Cpolygon points='0,-8 6.93,-4 6.93,4 0,8 -6.93,4 -6.93,-4' fill='none' stroke='%23EDC7A0' stroke-width='2'/%3E%3C/svg%3E">
+  <meta property="og:image" content="https://massiparente.github.io/dust-ifpu-2027/images/poster-og.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 24'%3E%3Crect x='-12' y='-12' width='24' height='24' rx='5' fill='%2314143A'/%3E%3Cpolygon points='0,-8 6.93,-4 6.93,4 0,8 -6.93,4 -6.93,-4' fill='none' stroke='%23F2C49A' stroke-width='2'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,25 +17,28 @@
 </head>
 <body>
 
-  <!-- PAH-like hexagon motifs, reused across the page -->
+  <!-- Shapes reused by the theme illustrations (same drawing language as the poster) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
-      <symbol id="hex" viewBox="-11 -11 22 22">
-        <polygon points="0,-10 8.66,-5 8.66,5 0,10 -8.66,5 -8.66,-5" fill="none" stroke="currentColor" stroke-width="1.8"/>
-      </symbol>
-      <symbol id="coronene" viewBox="-29 -27 58 54">
-        <use href="#hex" x="-11" y="-11" width="22" height="22"/>
-        <use href="#hex" x="6.32" y="-11" width="22" height="22"/>
-        <use href="#hex" x="-28.32" y="-11" width="22" height="22"/>
-        <use href="#hex" x="-2.34" y="4" width="22" height="22"/>
-        <use href="#hex" x="-19.66" y="4" width="22" height="22"/>
-        <use href="#hex" x="-2.34" y="-26" width="22" height="22"/>
-        <use href="#hex" x="-19.66" y="-26" width="22" height="22"/>
-      </symbol>
-      <symbol id="naphthalene" viewBox="-21 -11 42 22">
-        <use href="#hex" x="-19.66" y="-11" width="22" height="22"/>
-        <use href="#hex" x="-2.34" y="-11" width="22" height="22"/>
-      </symbol>
+      <polygon id="i-seg" points="6,0 3,5.2 -3,5.2 -6,0 -3,-5.2 3,-5.2"/>
+      <g id="i-ring">
+        <polygon points="13,0 6.5,11.26 -6.5,11.26 -13,0 -6.5,-11.26 6.5,-11.26" fill="none"/>
+        <circle cx="13" cy="0" r="2.6"/><circle cx="6.5" cy="11.26" r="2.6"/><circle cx="-6.5" cy="11.26" r="2.6"/>
+        <circle cx="-13" cy="0" r="2.6"/><circle cx="-6.5" cy="-11.26" r="2.6"/><circle cx="6.5" cy="-11.26" r="2.6"/>
+      </g>
+      <g id="i-alma">
+        <polygon points="-7,0 7,0 5,-7 -5,-7"/>
+        <rect x="-9" y="-17" width="4" height="11"/><rect x="5" y="-17" width="4" height="11"/>
+        <g transform="rotate(-28 0 -14)">
+          <rect x="-6" y="-23" width="12" height="10"/>
+          <path d="M -21 -27 Q 0 -6 21 -27 Z"/>
+          <ellipse cx="0" cy="-27" rx="21" ry="4.2" fill="#F1ECE2" stroke="#2B3557" stroke-width=".8"/>
+          <g fill="none" stroke-width=".8"><line x1="-16" y1="-27" x2="0" y2="-47"/><line x1="16" y1="-27" x2="0" y2="-47"/><line x1="-6" y1="-25" x2="0" y2="-47"/><line x1="6" y1="-25" x2="0" y2="-47"/></g>
+          <ellipse cx="0" cy="-48" rx="3.4" ry="1.6"/>
+        </g>
+      </g>
+      <path id="i-blobA" d="M -14 6 A 6 6 0 0 1 -12 -3 A 7 7 0 0 1 -4 -10 A 8 8 0 0 1 8 -9 A 5 5 0 0 1 14 -4 A 5 5 0 0 1 15 4 A 5 5 0 0 1 9 9 A 5 5 0 0 1 1 11 A 5 5 0 0 1 -7 11 A 5 5 0 0 1 -14 6 Z"/>
+      <path id="i-blobB" d="M -10 8 A 6 6 0 0 1 -11 -2 A 6 6 0 0 1 -3 -8 A 6 6 0 0 1 6 -6 A 5 5 0 0 1 11 2 A 6 6 0 0 1 3 10 A 7 7 0 0 1 -10 8 Z"/>
     </defs>
   </svg>
 
@@ -47,9 +50,9 @@
     </div>
     <nav id="nav" class="nav" aria-label="Sections">
       <a href="#about">About</a>
-      <a href="#organizers-section">Organizers</a>
+      <a href="#people">People</a>
       <a href="#abstracts">Abstracts</a>
-      <a href="#schedule">Schedule</a>
+      <a href="#schedule">Program</a>
       <a href="#logistics">Logistics</a>
     </nav>
   </header>
@@ -63,13 +66,10 @@
         <h1>Dusty Mysteries</h1>
         <p class="kicker">of the Universe</p>
         <p class="subtitle">from early epochs to cosmic noon</p>
-        <svg class="float f1" aria-hidden="true"><use href="#coronene"/></svg>
-        <svg class="float f2" aria-hidden="true"><use href="#naphthalene"/></svg>
-        <svg class="float f3" aria-hidden="true"><use href="#hex"/></svg>
       </div>
       <div class="hero-scene">
-        <img src="images/scene.webp" width="1066" height="728"
-             alt="Illustration of a sailing boat in the Gulf of Trieste: a radio dish tops the mast, the sails are patterned with hexagons, the helm is a JWST-like gold mirror, with Miramare castle and the lighthouse on the hills behind.">
+        <img src="images/scene.svg" width="840" height="614"
+             alt="Illustration from the poster: a sailing boat in the Gulf of Trieste, with an ALMA antenna on the mast and a JWST mirror as the helm; PAH molecules and dust grains float in the sky above Miramare castle and the lighthouse.">
       </div>
     </section>
 
@@ -79,10 +79,6 @@
         <div class="facts-main">
           <p class="big-date">1–5 March 2027</p>
           <p class="venue">IFPU – Institute for Fundamental Physics of the Universe · Trieste, Italy</p>
-          <p class="facts-links">
-            <a class="btn" href="#abstracts">Submit an abstract</a>
-            <a class="btn ghost" href="images/poster.png" download>Download the poster</a>
-          </p>
         </div>
         <div>
           <h2 class="label">Topics</h2>
@@ -96,6 +92,11 @@
           <h2 class="label">Scientific organizers</h2>
           <ul class="dots" id="facts-organizers"></ul>
         </div>
+        <p class="facts-links">
+          <a class="btn" href="#abstracts">Submit an abstract</a>
+          <a class="btn ghost" href="#schedule">See the program</a>
+          <a class="btn ghost" href="images/poster.png" download="dusty-mysteries-ifpu-2027-poster.png">Download the poster</a>
+        </p>
       </div>
     </section>
 
@@ -105,81 +106,91 @@
         <h2 class="section-title">Scientific rationale</h2>
         <div class="prose">
           <p class="lead">Dust is a fundamental component of galaxies: it absorbs ultraviolet radiation and re-emits it in the infrared, regulates the cooling of the interstellar medium and star formation, and traces the cycle of metals. Yet how dust forms and evolves in the first billion years of the Universe, and what role it plays across galaxy evolution, remain among the outstanding challenges in astrophysics.</p>
-          <p>The advent of JWST and ALMA has transformed the field. ALMA has revealed substantial dust reservoirs already in place at <i>z</i>&nbsp;&gt;&nbsp;6, implying rapid enrichment and efficient grain growth, and has found dust in environments once thought hostile to grain survival: quasar hosts, the circumgalactic medium and quiescent galaxies. JWST now places direct constraints on extinction curves, metallicities and gas conditions in early galaxies, and probes dust composition and the presence of polycyclic aromatic hydrocarbons (PAHs) at high redshift.</p>
-          <p>The emerging picture is complex and sometimes contradictory. Some galaxies at <i>z</i>&nbsp;~&nbsp;7 already host large dust masses, while others show low dust-to-metal ratios; UV-luminous galaxies at <i>z</i>&nbsp;&gt;&nbsp;10 often appear surprisingly dust-poor. AGN add a further layer of uncertainty: the relative contributions of star formation and AGN heating to the infrared emission of luminous quasars are still poorly constrained, and so is the impact of AGN on the removal of dust and PAHs in massive galaxies.</p>
-          <p>On the theory side, galaxy-evolution simulations are moving beyond simple scaling relations towards explicit modelling of the dust lifecycle, including grain growth and destruction, the evolution of grain sizes and chemistry, PAHs, and realistic AGN feedback. Dust studies have turned from a detection problem into a problem of physical interpretation: dust is there early on, but its formation pathways, its composition and its impact on galaxy evolution remain unclear.</p>
-          <p>This focus week brings together a small group of observers and theorists (~25 participants) working with JWST, ALMA and state-of-the-art simulations, to discuss recent advances, identify the most pressing open questions and define strategies for future observational and theoretical efforts.</p>
+          <p>JWST and ALMA have transformed the field. ALMA finds large dust reservoirs already in place at <i>z</i>&nbsp;&gt;&nbsp;6, while JWST directly constrains extinction curves, dust composition and PAHs in early galaxies. The emerging picture is puzzling: some early galaxies are already very dusty, others surprisingly dust-poor, and the role of AGN in heating and destroying dust remains unclear.</p>
+          <p>Meanwhile, simulations are starting to model the full dust lifecycle. The question is no longer whether dust is there early on, but how it forms, what it is made of, and how it shapes what we observe. This focus week brings together ~25 observers and theorists to tackle these questions together.</p>
         </div>
 
         <h3 class="subhead themes-head">Working themes</h3>
         <div class="topics">
           <article class="topic">
-            <svg class="topic-icon" aria-hidden="true"><use href="#coronene"/></svg>
+            <svg class="topic-art" viewBox="0 0 140 72" role="img" aria-label="JWST primary mirror and an ALMA antenna">
+              <g transform="translate(42 38)">
+                <circle r="31" fill="#14143A"/>
+                <g fill="#D6A23F" stroke="#9C6E1E" stroke-width=".8">
+                  <use href="#i-seg" x="9.9" y="5.72"/><use href="#i-seg" x="9.9" y="-5.72" opacity=".88"/><use href="#i-seg" x="0" y="-11.43"/><use href="#i-seg" x="-9.9" y="-5.72" opacity=".88"/><use href="#i-seg" x="-9.9" y="5.72"/><use href="#i-seg" x="0" y="11.43" opacity=".88"/>
+                  <use href="#i-seg" x="19.8" y="11.43"/><use href="#i-seg" x="19.8" y="0" opacity=".88"/><use href="#i-seg" x="19.8" y="-11.43"/><use href="#i-seg" x="9.9" y="-17.15" opacity=".88"/><use href="#i-seg" x="0" y="-22.86"/><use href="#i-seg" x="-9.9" y="-17.15" opacity=".88"/>
+                  <use href="#i-seg" x="-19.8" y="-11.43"/><use href="#i-seg" x="-19.8" y="0" opacity=".88"/><use href="#i-seg" x="-19.8" y="11.43"/><use href="#i-seg" x="-9.9" y="17.15" opacity=".88"/><use href="#i-seg" x="0" y="22.86"/><use href="#i-seg" x="9.9" y="17.15" opacity=".88"/>
+                </g>
+                <circle r="2.4" fill="#F1D08C"/>
+              </g>
+              <use href="#i-alma" fill="#FFFFFF" stroke="#2B3557" transform="translate(108 70) scale(1.25)"/>
+            </svg>
             <p class="topic-n">01</p>
             <h3>ALMA and JWST for dust and PAHs</h3>
             <p class="topic-q">What have we learned about dust from JWST and ALMA?</p>
-            <p>The synergy between ALMA far-infrared data and JWST spectroscopy now constrains dust masses, attenuation laws and grain properties at <i>z</i>&nbsp;&gt;&nbsp;6.</p>
-            <ul>
-              <li>How rapidly can dust build up within the first billion years?</li>
-              <li>What do extinction curves and UV bumps reveal about grain composition and size distribution?</li>
-              <li>Are PAHs and other carbonaceous grains already common at high redshift?</li>
-              <li>How do dust properties vary from UV-bright to heavily obscured galaxies?</li>
-            </ul>
           </article>
           <article class="topic">
-            <svg class="topic-icon" aria-hidden="true"><use href="#naphthalene"/></svg>
+            <svg class="topic-art" viewBox="0 0 140 72" role="img" aria-label="An active galactic nucleus: black hole, accretion disk, jets and a dusty torus">
+              <g transform="translate(70 36)">
+                <path d="M -4 -4 L -10 -36 L 10 -36 L 4 -4 Z M -4 4 L -10 36 L 10 36 L 4 4 Z" fill="#FFFFFF" opacity=".35"/>
+                <path d="M 0 -6 V -34 M 0 6 V 34" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                <g fill="#F7EEDF" opacity=".9">
+                  <use href="#i-blobA" transform="translate(-52 -2) scale(.75)"/>
+                  <use href="#i-blobB" transform="translate(-40 10) scale(.6)"/>
+                  <use href="#i-blobB" transform="translate(-42 -12) scale(.5) rotate(40)"/>
+                  <use href="#i-blobA" transform="translate(52 2) scale(.75) rotate(180)"/>
+                  <use href="#i-blobB" transform="translate(40 -10) scale(.6) rotate(200)"/>
+                  <use href="#i-blobB" transform="translate(43 12) scale(.5) rotate(120)"/>
+                </g>
+                <ellipse rx="30" ry="7" fill="#D6A23F"/>
+                <ellipse rx="17" ry="3.8" fill="#F1D08C"/>
+                <circle r="6.5" fill="#14143A"/>
+              </g>
+            </svg>
             <p class="topic-n">02</p>
             <h3>Dust &amp; AGN</h3>
             <p class="topic-q">What is the role of AGN in shaping dust properties?</p>
-            <p>Radiation from accreting black holes can heat dust and alter its observable properties, while AGN-driven winds may destroy or redistribute it.</p>
-            <ul>
-              <li>How much of the infrared emission of high-<i>z</i> quasars comes from star formation, and how much from AGN heating?</li>
-              <li>Do AGN-driven outflows destroy dust, or redistribute it within the host galaxy?</li>
-              <li>Can dust properties tell starburst- and AGN-dominated systems apart?</li>
-            </ul>
           </article>
           <article class="topic">
-            <svg class="topic-icon" aria-hidden="true"><use href="#hex"/></svg>
+            <svg class="topic-art" viewBox="0 0 140 72" role="img" aria-label="A PAH molecule and dust grains">
+              <g stroke="#FFFFFF" fill="#FFFFFF" stroke-width="3" stroke-linejoin="round" transform="translate(40 36) scale(.62)">
+                <use href="#i-ring"/><use href="#i-ring" y="-22.52"/><use href="#i-ring" y="22.52"/>
+                <use href="#i-ring" x="19.5" y="-11.26"/><use href="#i-ring" x="19.5" y="11.26"/>
+                <use href="#i-ring" x="-19.5" y="-11.26"/><use href="#i-ring" x="-19.5" y="11.26"/>
+              </g>
+              <g fill="#F2C49A">
+                <use href="#i-blobA" transform="translate(96 26) rotate(-10) scale(1.35)"/>
+                <use href="#i-blobB" transform="translate(120 50) rotate(25) scale(1.1)"/>
+                <use href="#i-blobB" transform="translate(88 56) rotate(70) scale(.6)"/>
+              </g>
+            </svg>
             <p class="topic-n">03</p>
             <h3>Are we ready for high-z?</h3>
             <p class="topic-q">Are our simulations ready for the high-redshift Universe?</p>
-            <p>The physics in current models is still simplified and uncertain, and simulations are not always compared with observations on equal terms.</p>
-            <ul>
-              <li>What is the best way to compare simulation predictions with the new data, and why?</li>
-              <li>Can simulations reproduce dust abundance, emission and attenuation at high <i>z</i> at the same time?</li>
-              <li>Which modelling strategies should the next generation of simulations prioritise?</li>
-              <li>Which ALMA and JWST observations can test or falsify current models?</li>
-            </ul>
           </article>
         </div>
 
         <div class="format">
           <h3 class="subhead">Format &amp; goals</h3>
-          <p>The week is built around extensive, active discussion between observers and theorists. Mornings open with introductory seminars (~40&nbsp;min) that summarise the state of the art on each theme, followed by talks (15–20&nbsp;min) presenting new results. Afternoons are devoted to long interactive discussions, brainstorming, and working sessions where small mixed groups of observers and simulators work together.</p>
-          <p>Dedicated time will go to coordinated proposal planning for the upcoming ALMA, ESO and JWST calls: the week falls about two months before the 2027 ALMA deadline. The goal is to shape new projects, proposals and papers, and a summary of the discussions and outcomes will be shared with the community.</p>
-          <ul class="chips">
-            <li>Seminars &amp; talks</li>
-            <li>Interactive discussions</li>
-            <li>Brainstorming sessions</li>
-            <li>Small-group work</li>
-            <li>Proposal planning</li>
-          </ul>
+          <p>Mornings: introductory seminars and talks. Afternoons: discussions, brainstorming and small-group work between observers and simulators, with dedicated time to plan joint ALMA, ESO and JWST proposals.</p>
         </div>
       </div>
     </section>
 
     <!-- PEOPLE -->
-    <section id="organizers-section" class="section alt">
+    <section id="people" class="section alt">
       <div class="wrap">
-        <h2 class="section-title">Organizers</h2>
+        <h2 class="section-title">People</h2>
         <div class="people-grid">
           <div>
             <h3 class="subhead">Scientific organizers</h3>
             <ul class="people" id="organizers"></ul>
+            <h3 class="subhead local-head">Local organizer</h3>
+            <ul class="people" id="local-organizers"></ul>
           </div>
           <div>
-            <h3 class="subhead">Local organizer</h3>
-            <ul class="people" id="local-organizers"></ul>
+            <h3 class="subhead">Participants</h3>
+            <ul class="people names" id="participants"></ul>
           </div>
         </div>
       </div>
@@ -189,11 +200,11 @@
     <section id="abstracts" class="section dark">
       <div class="wrap narrow">
         <h2 class="section-title">Talks &amp; abstracts</h2>
-        <p>Participation is by invitation. All participants are encouraged to give a talk, although it is not mandatory. Titles and abstracts will be collected ahead of the meeting.</p>
+        <p>All participants are encouraged to give a talk, although it is not mandatory. Titles and abstracts will be collected ahead of the meeting.</p>
         <dl class="kv">
           <div><dt>Abstract deadline</dt><dd id="abs-deadline"></dd></div>
           <div><dt>Submission form</dt><dd id="abs-form"></dd></div>
-          <div><dt>Registration fee</dt><dd>None</dd></div>
+          <div><dt>Participation</dt><dd>By invitation</dd></div>
         </dl>
       </div>
     </section>
@@ -201,7 +212,7 @@
     <!-- SCHEDULE -->
     <section id="schedule" class="section">
       <div class="wrap">
-        <h2 class="section-title">Schedule</h2>
+        <h2 class="section-title">Program</h2>
         <p class="note">Below is the tentative outline of the week. <strong>The full program, with speakers and times, will be announced later.</strong></p>
         <ul class="legend" aria-label="Legend">
           <li class="talk">Seminars &amp; talks</li>
@@ -225,7 +236,7 @@
           </article>
           <article class="card">
             <h3>Local support</h3>
-            <p>There is no registration fee. Participants cover their own travel; IFPU provides full local support, including accommodation and daily meals.</p>
+            <p>Participants cover their own travel; IFPU provides full local support, including accommodation and daily meals.</p>
             <p>Priority for support is given to early-career researchers and to scientists based outside Italy.</p>
           </article>
           <article class="card">
@@ -243,11 +254,11 @@
           </article>
           <article class="card">
             <h3>Visa</h3>
-            <p>If you need an official invitation letter for your visa application, please let the organizers know as early as possible.</p>
+            <p>If you need an official invitation letter for your visa application, please <a href="#people">contact the organizers</a> as early as possible.</p>
           </article>
           <article class="card">
-            <h3>Contact</h3>
-            <p>For any question, please write to <span id="contact-logistics"></span>.</p>
+            <h3>Social activities</h3>
+            <p>Social activities will be announced soon.</p>
           </article>
         </div>
       </div>
@@ -259,10 +270,11 @@
       <div>
         <p class="footer-title">Navigating the Dusty Mysteries of the Universe</p>
         <p>IFPU Focus Week · Trieste · 1–5 March 2027</p>
+        <p><a href="https://www.ifpu.it" target="_blank" rel="noopener">ifpu.it ↗</a></p>
       </div>
       <div class="footer-right">
-        <p>Contact: <span id="contact-footer"></span></p>
-        <p><a href="https://www.ifpu.it" target="_blank" rel="noopener">ifpu.it ↗</a></p>
+        <p class="footer-label">Contact the organizers</p>
+        <ul class="footer-contacts" id="footer-contacts"></ul>
       </div>
     </div>
   </footer>

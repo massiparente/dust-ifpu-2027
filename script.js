@@ -12,23 +12,18 @@
     var t = document.getElementById(id);
     if (t) { t.textContent = ""; t.appendChild(node); }
   }
-
-  // Contact email
-  function contactNode() {
-    if (!S.contactEmail) return tbd("[contact email]");
-    var a = el("a", null, S.contactEmail);
-    a.href = "mailto:" + S.contactEmail;
+  function mail(addr) {
+    var a = el("a", null, addr);
+    a.href = "mailto:" + addr;
     return a;
   }
-  fill("contact-logistics", contactNode());
-  fill("contact-footer", contactNode());
 
-  // People lists
-  function personList(id, people, emptyText) {
+  // Organizers (name, affiliation lines, optional email)
+  function personList(id, people) {
     var ul = document.getElementById(id);
     if (!ul) return;
     if (!people || !people.length) {
-      var li = el("li"); li.appendChild(tbd(emptyText)); ul.appendChild(li); return;
+      var li = el("li"); li.appendChild(tbd()); ul.appendChild(li); return;
     }
     people.forEach(function (p) {
       var li = el("li");
@@ -36,14 +31,32 @@
       var affs = [].concat(p.affiliation || []).filter(Boolean);
       if (!affs.length) li.appendChild(el("span", "aff tbd", "[affiliation]"));
       affs.forEach(function (a) { li.appendChild(el("span", "aff", a)); });
+      if (p.email) { var m = el("span", "mail"); m.appendChild(mail(p.email)); li.appendChild(m); }
       ul.appendChild(li);
     });
   }
-  personList("organizers", S.organizers, "to be announced");
-  personList("local-organizers", S.localOrganizers, "to be announced");
+  personList("organizers", S.organizers);
+  personList("local-organizers", S.localOrganizers);
+
+  // Participants (names only)
+  var pl = document.getElementById("participants");
+  if (pl) {
+    if (!S.participants || !S.participants.length) {
+      var li = el("li"); li.appendChild(tbd("The list of participants will be published soon.")); pl.appendChild(li);
+    } else {
+      S.participants.forEach(function (n) { pl.appendChild(el("li", null, n)); });
+    }
+  }
 
   var fo = document.getElementById("facts-organizers");
   (S.organizers || []).forEach(function (p) { fo.appendChild(el("li", null, p.name)); });
+
+  // Footer contacts
+  var fc = document.getElementById("footer-contacts");
+  (S.organizers || []).forEach(function (p) {
+    if (!p.email) return;
+    var li = el("li"); li.appendChild(mail(p.email)); fc.appendChild(li);
+  });
 
   // Abstracts
   var A = S.abstracts || {};

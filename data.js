@@ -1,24 +1,46 @@
 /*
  * ------------------------------------------------------------------
  *  Site content that changes often lives here.
- *  Edit this file to update organizers, abstracts and the schedule.
+ *  Edit this file to update people, abstracts and the schedule.
  *  Empty strings / empty lists show up on the site as
  *  "to be announced" placeholders.
  * ------------------------------------------------------------------
  */
 window.SITE = {
-  // Contact address shown in the footer and in the Logistics section.
-  contactEmail: "",
-
-  // Scientific organizers (each affiliation on its own line)
+  // Scientific organizers (each affiliation on its own line).
+  // Their emails are also used as the contact addresses of the site.
   organizers: [
-    { name: "Max Parente",     affiliation: ["University of Florida"] },
-    { name: "Roberta Tripodi", affiliation: ["INAF – Osservatorio Astronomico di Roma"] },
-    { name: "Darko Donevski",  affiliation: ["National Centre for Nuclear Research, Warsaw", "SISSA, Trieste"] }
+    { name: "Max Parente",     affiliation: ["University of Florida"],
+      email: "parente.m@ufl.edu" },
+    { name: "Roberta Tripodi", affiliation: ["INAF – Osservatorio Astronomico di Roma"],
+      email: "roberta.tripodi@inaf.it" },
+    { name: "Darko Donevski",  affiliation: ["National Centre for Nuclear Research, Warsaw", "SISSA, Trieste"],
+      email: "darko.donevski@ncbj.gov.pl" }
   ],
 
   localOrganizers: [
     { name: "Chiara Feruglio", affiliation: ["INAF – Osservatorio Astronomico di Trieste"] }
+  ],
+
+  // Participants (names only), shown in alphabetical order by surname as listed here
+  participants: [
+    "Hiddo Algera",
+    "Caleb Choban",
+    "Ilse De Looze",
+    "Andreas Faisst",
+    "Ismael García-Bernete",
+    "Giuliano Lorenzon",
+    "Allison Man",
+    "Kosei Matsumoto",
+    "Jed McKinney",
+    "Lorenzo Napolitano",
+    "Pablo G. Pérez-González",
+    "Curro Rodríguez-Montero",
+    "Lucie Rowland",
+    "Irene Shivaei",
+    "Laura Sommovigo",
+    "Aswin Vijayan",
+    "Joris Witstok"
   ],
 
   // Abstract submission
@@ -33,7 +55,7 @@ window.SITE = {
   schedule: [
     { day: "Monday", date: "1 March", sessions: [
       { time: "Morning",   title: "Welcome", type: "talk" },
-      { time: "",          title: "Intro seminar: multi-wavelength perspective on dust evolution (theme 1)", type: "talk" },
+      { time: "",          title: "Intro seminar: multi-wavelength perspective on dust evolution", type: "talk" },
       { time: "",          title: "Coffee break", type: "break" },
       { time: "",          title: "Talks + Q&A, observationally oriented", type: "talk" },
       { time: "",          title: "Lunch", type: "break" },
@@ -41,7 +63,7 @@ window.SITE = {
       { time: "",          title: "Coffee & wrap-up", type: "break" }
     ]},
     { day: "Tuesday", date: "2 March", sessions: [
-      { time: "Morning",   title: "Intro seminar: the dust–AGN connection (theme 2)", type: "talk" },
+      { time: "Morning",   title: "Intro seminar: the dust–AGN connection", type: "talk" },
       { time: "",          title: "Coffee break", type: "break" },
       { time: "",          title: "Talks + Q&A, AGN oriented", type: "talk" },
       { time: "",          title: "Lunch", type: "break" },
@@ -49,7 +71,7 @@ window.SITE = {
       { time: "",          title: "Coffee & wrap-up", type: "break" }
     ]},
     { day: "Wednesday", date: "3 March", sessions: [
-      { time: "Morning",   title: "Intro seminar: dust models and simulations (theme 3)", type: "talk" },
+      { time: "Morning",   title: "Intro seminar: dust models and simulations", type: "talk" },
       { time: "",          title: "Coffee break", type: "break" },
       { time: "",          title: "Talks + Q&A, modelling oriented", type: "talk" },
       { time: "",          title: "Lunch", type: "break" },
