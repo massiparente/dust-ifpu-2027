@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dusty Mysteries of the Universe · IFPU Focus Week 2027</title>
+  <meta name="description" content="IFPU focus week on dust and PAHs in galaxy evolution, from early epochs to cosmic noon. Trieste, 1–5 March 2027.">
+  <meta property="og:title" content="Navigating the Dusty Mysteries of the Universe">
+  <meta property="og:description" content="IFPU Focus Week · Trieste · 1–5 March 2027">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/poster.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 24'%3E%3Crect x='-12' y='-12' width='24' height='24' rx='5' fill='%23141438'/%3E%3Cpolygon points='0,-8 6.93,-4 6.93,4 0,8 -6.93,4 -6.93,-4' fill='none' stroke='%23EDC7A0' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PAH-like hexagon motifs, reused across the page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="hex" viewBox="-11 -11 22 22">
+        <polygon points="0,-10 8.66,-5 8.66,5 0,10 -8.66,5 -8.66,-5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      </symbol>
+      <symbol id="coronene" viewBox="-29 -27 58 54">
+        <use href="#hex" x="-11" y="-11" width="22" height="22"/>
+        <use href="#hex" x="6.32" y="-11" width="22" height="22"/>
+        <use href="#hex" x="-28.32" y="-11" width="22" height="22"/>
+        <use href="#hex" x="-2.34" y="4" width="22" height="22"/>
+        <use href="#hex" x="-19.66" y="4" width="22" height="22"/>
+        <use href="#hex" x="-2.34" y="-26" width="22" height="22"/>
+        <use href="#hex" x="-19.66" y="-26" width="22" height="22"/>
+      </symbol>
+      <symbol id="naphthalene" viewBox="-21 -11 42 22">
+        <use href="#hex" x="-19.66" y="-11" width="22" height="22"/>
+        <use href="#hex" x="-2.34" y="-11" width="22" height="22"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">IFPU Focus Week</a>
+      <span class="when">Trieste · 1–5 March 2027</span>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+    <nav id="nav" class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#people">People</a>
+      <a href="#abstracts">Abstracts</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#logistics">Logistics</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="kicker">Navigating the</p>
+        <h1>Dusty Mysteries</h1>
+        <p class="kicker">of the Universe</p>
+        <p class="subtitle">from early epochs to cosmic noon</p>
+        <svg class="float f1" aria-hidden="true"><use href="#coronene"/></svg>
+        <svg class="float f2" aria-hidden="true"><use href="#naphthalene"/></svg>
+        <svg class="float f3" aria-hidden="true"><use href="#hex"/></svg>
+      </div>
+      <div class="hero-scene">
+        <img src="images/scene.webp" width="1066" height="728"
+             alt="Illustration of a sailing boat in the Gulf of Trieste: a radio dish tops the mast, the sails are patterned with hexagons, the helm is a JWST-like gold mirror, with Miramare castle and the lighthouse on the hills behind.">
+      </div>
+    </section>
+
+    <!-- KEY FACTS BAND (echoes the bottom of the poster) -->
+    <section class="facts">
+      <div class="wrap facts-grid">
+        <div class="facts-main">
+          <p class="big-date">1–5 March 2027</p>
+          <p class="venue">IFPU – Institute for Fundamental Physics of the Universe · Trieste, Italy</p>
+          <p class="facts-links">
+            <a class="btn" href="#abstracts">Submit an abstract</a>
+            <a class="btn ghost" href="images/poster.png" download>Download the poster</a>
+          </p>
+        </div>
+        <div>
+          <h2 class="label">Topics</h2>
+          <ul class="dots">
+            <li>ALMA and JWST for dust and PAHs</li>
+            <li>Dust &amp; AGN</li>
+            <li>Are we ready for high-z?</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="label">Scientific organizers</h2>
+          <ul class="dots" id="facts-organizers"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <h2 class="section-title">Scientific rationale</h2>
+        <div class="prose">
+          <p class="lead">The aim of this IFPU focus week is to gather a small group of participants (~25) to discuss the most pressing open questions on dust and polycyclic aromatic hydrocarbons (PAHs) in galaxy evolution, from both the observational and the simulation perspectives.</p>
+        </div>
+
+        <div class="topics">
+          <article class="topic">
+            <svg class="topic-icon" aria-hidden="true"><use href="#coronene"/></svg>
+            <p class="topic-n">01</p>
+            <h3>ALMA and JWST for dust and PAHs</h3>
+            <p>What have ALMA and JWST taught us about dust and PAHs?</p>
+          </article>
+          <article class="topic">
+            <svg class="topic-icon" aria-hidden="true"><use href="#naphthalene"/></svg>
+            <p class="topic-n">02</p>
+            <h3>Dust &amp; AGN</h3>
+            <p>What is the connection between dust and AGNs?</p>
+          </article>
+          <article class="topic">
+            <svg class="topic-icon" aria-hidden="true"><use href="#hex"/></svg>
+            <p class="topic-n">03</p>
+            <h3>Are we ready for high-z?</h3>
+            <p>Are our simulations ready for the high-redshift Universe?</p>
+          </article>
+        </div>
+
+        <div class="format">
+          <h3 class="subhead">Format</h3>
+          <p>The week is built around extensive, active group discussion, with the goal of shaping projects, proposals and papers around these topics and promoting new collaborations. Alongside talks from participants, the program includes dedicated activities:</p>
+          <ul class="chips">
+            <li>Talks</li>
+            <li>Brainstorming sessions</li>
+            <li>Interactive discussions</li>
+            <li>Small-group work</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEOPLE -->
+    <section id="people" class="section alt">
+      <div class="wrap">
+        <h2 class="section-title">People</h2>
+        <div class="people-grid">
+          <div>
+            <h3 class="subhead">Scientific organizers</h3>
+            <ul class="people" id="organizers"></ul>
+          </div>
+          <div>
+            <h3 class="subhead">Participants</h3>
+            <ul class="people cols" id="participants"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABSTRACTS -->
+    <section id="abstracts" class="section dark">
+      <div class="wrap narrow">
+        <h2 class="section-title">Talks &amp; abstracts</h2>
+        <p>Participation is by invitation. All participants are encouraged to give a talk, although it is not mandatory. Titles and abstracts will be collected ahead of the meeting.</p>
+        <dl class="kv">
+          <div><dt>Abstract deadline</dt><dd id="abs-deadline"></dd></div>
+          <div><dt>Submission form</dt><dd id="abs-form"></dd></div>
+          <div><dt>Registration fee</dt><dd>None</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="section">
+      <div class="wrap">
+        <h2 class="section-title">Schedule</h2>
+        <p class="note">The detailed program will be published closer to the meeting.</p>
+        <div class="days" id="days"></div>
+      </div>
+    </section>
+
+    <!-- LOGISTICS -->
+    <section id="logistics" class="section alt">
+      <div class="wrap">
+        <h2 class="section-title">Logistics</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Venue</h3>
+            <p><strong>IFPU</strong> – Institute for Fundamental Physics of the Universe<br>
+               Via Beirut 2, 34151 Trieste, Italy (Miramare campus)</p>
+            <p><a href="https://www.google.com/maps/search/?api=1&amp;query=IFPU+Via+Beirut+2+Trieste" target="_blank" rel="noopener">Open in Google Maps ↗</a></p>
+          </article>
+          <article class="card">
+            <h3>Local support</h3>
+            <p>There is no registration fee. Participants cover their own travel; IFPU provides full local support, including accommodation and daily meals.</p>
+            <p>Priority for support is given to early-career researchers and to scientists based outside Italy.</p>
+          </article>
+          <article class="card">
+            <h3>Accommodation</h3>
+            <p>Participants are hosted in local hotels or at the <a href="https://www.ictp.it/building/adriatico-guesthouse" target="_blank" rel="noopener">Adriatico Guesthouse ↗</a>, on the ICTP campus by the sea, close to IFPU.</p>
+          </article>
+          <article class="card">
+            <h3>Getting there</h3>
+            <ul class="plain">
+              <li><strong>Trieste Airport (TRS)</strong>: regional train to Trieste Centrale, or taxi.</li>
+              <li><strong>Venice Marco Polo (VCE)</strong>: shuttle to Venezia Mestre, then train to Trieste Centrale; direct coaches also run to Trieste.</li>
+              <li><strong>From Trieste Centrale / city centre</strong>: bus line 6 towards Grignano / Miramare, or taxi.</li>
+            </ul>
+            <p class="small">Please check current timetables before travelling.</p>
+          </article>
+          <article class="card">
+            <h3>Visa</h3>
+            <p>If you need an official invitation letter for your visa application, please let the organizers know as early as possible.</p>
+          </article>
+          <article class="card">
+            <h3>Contact</h3>
+            <p>For any question, please write to <span id="contact-logistics"></span>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-title">Navigating the Dusty Mysteries of the Universe</p>
+        <p>IFPU Focus Week · Trieste · 1–5 March 2027</p>
+      </div>
+      <div class="footer-right">
+        <p>Contact: <span id="contact-footer"></span></p>
+        <p><a href="https://www.ifpu.it" target="_blank" rel="noopener">ifpu.it ↗</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
