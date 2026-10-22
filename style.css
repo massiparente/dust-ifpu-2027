@@ -53,13 +53,18 @@ a:hover { color: var(--navy); }
 .nav {
   max-width: var(--wrap); margin: 0 auto;
   padding: 0 var(--gutter) 10px;
-  display: flex; gap: 28px;
+  display: flex; align-items: center; gap: 28px;
 }
 .nav a {
   color: var(--sand); text-decoration: none;
   font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
 }
 .nav a:hover { color: #fff; }
+.nav .nav-contact {
+  margin-left: auto; color: var(--navy); background: var(--sand);
+  padding: 4px 14px; border-radius: 999px;
+}
+.nav .nav-contact:hover { background: var(--cream); color: var(--navy); }
 .menu-toggle { display: none; }
 
 @media (max-width: 720px) {
@@ -70,9 +75,10 @@ a:hover { color: var(--navy); }
     font-family: var(--display); letter-spacing: .14em; font-size: 1rem;
     padding: 4px 12px; border-radius: 4px; cursor: pointer;
   }
-  .nav { display: none; flex-direction: column; gap: 0; padding-bottom: 8px; }
+  .nav { display: none; flex-direction: column; align-items: stretch; gap: 0; padding-bottom: 8px; }
   .nav.open { display: flex; }
   .nav a { padding: 10px 0; border-top: 1px solid rgba(255,255,255,.1); }
+  .nav .nav-contact { margin: 8px 0 4px; align-self: flex-start; padding: 8px 16px; border-top: 0; }
 }
 
 /* ---------- Hero ---------- */
