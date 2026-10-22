@@ -33,12 +33,14 @@
     people.forEach(function (p) {
       var li = el("li");
       li.appendChild(el("span", "name", p.name));
-      li.appendChild(p.affiliation ? el("span", "aff", p.affiliation) : el("span", "aff tbd", "[affiliation]"));
+      var affs = [].concat(p.affiliation || []).filter(Boolean);
+      if (!affs.length) li.appendChild(el("span", "aff tbd", "[affiliation]"));
+      affs.forEach(function (a) { li.appendChild(el("span", "aff", a)); });
       ul.appendChild(li);
     });
   }
   personList("organizers", S.organizers, "to be announced");
-  personList("participants", S.participants, "The list of confirmed participants will be published soon.");
+  personList("local-organizers", S.localOrganizers, "to be announced");
 
   var fo = document.getElementById("facts-organizers");
   (S.organizers || []).forEach(function (p) { fo.appendChild(el("li", null, p.name)); });
